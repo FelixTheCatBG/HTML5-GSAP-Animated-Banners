@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="ad.size" content="width=300,height=600">
+	<title>Kabinata Banner</title>
+    
+<style>
+
+
+
+
+#demo {
+	position: relative;
+	
+	
+	background-color: #DE0000;
+	
+    width: 300px;
+	height: 600px;
+	
+	font-family:sans-serif;
+}
+	html, body {
+	
+	margin:0;
+   
+}
+
+
+
+	html, body {
+	margin:0;
+	
+    overflow:hidden;
+}
+
+#demo{
+	background: url(images/background300x600.png) no-repeat;
+	background-color: #DE0000;
+	background-size:cover;
+	width:300px;
+	height: 600px;
+		
+		font-family:sans-serif;
+}
+#logo {
+	position: absolute;
+	display: block;
+	bottom:5px;
+	right:5px;
+	text-align:center;	
+	width: 211px;
+	height: 45px;	
+	padding-top:2px;
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center;
+}
+#textA, #textB{
+	position: relative;	
+	color: #fff;
+	padding-left: 2%;
+	padding-right: 2%;
+    font-family:sans-serif;
+
+}
+#textA{
+	margin-top:0px;
+	padding-top: 180px;
+	text-align: center;
+	margin-bottom:5px;
+	padding-bottom: 40px;
+	opacity: 0;
+}
+#textB {
+	text-align: center;
+	padding-bottom: 0px;
+	margin-bottom:45px;
+	opacity: 0;
+}
+#textC{
+
+	position: relative;	
+	color: #fff;
+	padding-left: 2%;
+	padding-right: 2%;
+	
+	opacity: 0;
+    font-family:sans-serif;
+    	text-align:center;
+	
+}
+#button {
+	position: relative;
+    border-radius: 4px;
+    background-color: #03ca03; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 16px;
+    cursor: pointer;
+    margin-top:45px;
+
+  }
+#button:hover {
+    background-color: #02b502;
+}
+
+</style>
+</head>
+
+<body>
+<a href=”_eaclick_​” target=”_blank” style="text-decoration:none;">
+	<div id="demo" style="cursor: pointer;" >
+		
+		<h2 id="textA" style="font-size:28px;">Как да науча английски език?</h2>
+		<h3 id="textB">Oнлайн курс с учители на живо </h3>	
+		<h3 id="textC">Cамо 380 лв.</h3>
+		<div style="text-align: center;">
+		<button id="button">Запишете се сега</button>
+		</div>
+		<img  id="logo" src="images/kabinatapngre.png">
+
+	</div>
+</a>
+<!--- The following scripts are necessary to do TweenLite tweens on CSS properties -->
+<script type="text/javascript" src="https://s0.2mdn.net/ads/studio/cached_libs/tweenlite_1.18.0_56fa823cfbbef1c2f4d4346f0f0e6c3c_min.js"></script>
+<script type="text/javascript" src="js/CSSPlugin.min.js"></script>
+
+<script>
+ window.addEventListener('blur', function () {
+        TweenLite.lagSmoothing(0);
+    }, false);
+ 
+ 
+    window.addEventListener('focus', function () {
+        TweenLite.lagSmoothing(1000, 16);
+    }, false);
+
+    function anim(){
+	var logo = document.getElementById("logo");
+	TweenLite.from(logo, 1, {opacity:1,delay:0});
+	TweenLite.to(logo, 1, {delay:2,opacity:1});
+	
+
+	
+	var textA = document.getElementById("textA");
+	TweenLite.from(textA, 0.5, { scale:0, delay:0.5,opacity:0});
+	TweenLite.to(textA, 0.5, {delay:0.5,opacity:1});
+	TweenLite.to(textA, 1, {delay:5.5,opacity:0});
+
+	var textB = document.getElementById("textB");
+	TweenLite.from(textB, 0.5, { scale:0, delay:1.0, opacity:0});
+	TweenLite.to(textB, 0.7, {delay:1.0,opacity:1});
+    TweenLite.to(textB, 1, {delay:5.5,opacity:0});
+
+	var textC = document.getElementById("textC");
+	TweenLite.from(textC, 1, {scale:0, delay:1.7,opacity:0});
+	TweenLite.to(textC, 1, {delay:1.7,opacity:1});
+	TweenLite.to(textC, 1, {delay:5.5,opacity:0});
+
+};
+anim()
+setInterval("anim()",6000);
+</script>
+
+</body>
+</html>
